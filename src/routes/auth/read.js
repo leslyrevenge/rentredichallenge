@@ -11,7 +11,6 @@ const listUsers = async (input = {}) => {
     };
     output.push(payload);
   });
-  console.log(output);
 
   return output;
 };

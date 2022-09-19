@@ -7,13 +7,10 @@ const sendError = async (error, res) => {
       message: error.message,
       error_type: error.type || "server",
     };
-    console.log(payload, "testin send error");
 
     let errorModel = new ErrorModel(payload);
     await errorModel.save();
-  } catch (error) {
-    console.log(error, "testin send error");
-  }
+  } catch (error) {}
   // msg for custom message or simply send server error
   res.status(error.status || 501).send(error.msg || "Server Error");
 };
