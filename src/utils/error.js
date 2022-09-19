@@ -5,7 +5,6 @@ const sendError = async (error, res) => {
     let payload = {
       status: error.status,
       message: error.message,
-      raw: JSON.stringify(error),
       error_type: error.type || "server",
     };
     console.log(payload, "testin send error");
